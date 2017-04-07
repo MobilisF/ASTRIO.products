@@ -1,9 +1,7 @@
-
 body {
 	max-width: 490px; 
 	width: 100%;
 	margin: 0 auto;
-	
 	font-family: Arial;
 	}
 
@@ -13,17 +11,24 @@ body {
 	vertical-align: top;
 	max-width: 155px;
 	max-height: 260px;
-	margin: 10px 0 10px 0;
-	
+	width: 100%;
+	height: 100%;
+	margin: 10px 0 10px 0;	
 	border: 2px solid transparent;
 	border-bottom: 0;
 	}
 
 .image {
-	width: 135px;
-	height: 140px;
+	max-width: 135px;
+	width: 100%;
+	height: auto;
 	border-radius: 2px;
 	margin: 0 auto;
+	}
+
+.image img {
+	max-width: 100%;
+	height: auto;	
 	}
 
 a {
@@ -35,12 +40,10 @@ a {
 	height: 125px;
 	border-bottom: 1px solid #ACB2B3;
 	padding: 0 10px 0 10px;
-	
 	margin: 0 auto;
 	}
 
 .product_title {
-
 	height: 60px;
 	font-size: 13px;
 	color: #000000;
@@ -52,7 +55,6 @@ a {
 	overflow: hidden;
 	}
 
-	/*	PRICE */
 .price {
 	float: left;
 	height: 27px;
@@ -63,7 +65,7 @@ a {
 .symbol {
 	float: left;
 	font-size: 13px;
-	margin-top: 4.5px;
+	margin-top: 4px;
 	}
 
 .first {
@@ -76,11 +78,9 @@ a {
 	float: left;
 	font-size: 12px;
 	font-weight: bold;
-	margin-top: 5.5px;
+	margin-top: 5px;
 	}
 
-
-	/*	ADD TO CART */
 .to_cart {
 	float: right;
 	outline: none;
@@ -95,20 +95,27 @@ a {
 
 .product:hover .to_cart:hover {
 	background: #cb3725;
+	transition: background 0.1s ease;
 	}
 
+.product:hover .to_cart:active {
+	box-shadow: inset 0 0 7px rgba(0,0,0,0.5);
+	transform: scale(.95);
+	} 
 
 .alt_text {
 	position: absolute;
 	width: 135px;
 	left: -2px;
 	top: 100%;
-	
 	display: none;
 	color: #646B73;
 	font-size: 11px;
 	padding: 20px 10px 10px 10px;
-	
+	border: 2px solid #eb5c3e;
+	border-top: 0;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	background: #fff;
 	}
 
 .for_stars {
@@ -134,21 +141,15 @@ a {
 
 .product:hover .star{
 	background-position: 0 0;
-	
 	}
 
 .product:hover .alt_text {
 	position: relative;
 	z-index: 5;
-	display: block;
-	border: 2px solid #eb5c3e;
-	border-top: 0;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-	background: #fff;
 	}
 
 .product:hover .to_cart {
-	background: #eb5c3e;
+	background: #eb5c3e;	
 	}
 
 .product:hover {
@@ -159,4 +160,76 @@ a {
 
 .product:hover .static{
 	border-bottom: 0;
+	}
+
+
+/*media queries*/
+
+section { 
+    display: block;
+	}
+
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9;
+	}
+
+@media screen and (max-width: 480px) {
+	html {
+		width: 100%;
+   		}
+	
+	body {
+		margin: 0 auto;
+		width: 100%;
+		text-align: center;
+		}
+	
+	.product {
+		width: 100%;	
+   		}
+	}
+
+@media screen and (max-width: 240px) {
+	html {
+		width: 80%;
+   		}
+	
+	body {
+		margin: 0 auto;
+		width: 80%;
+		text-align: center;
+		}
+	
+	.product {
+		width: 80%;	
+   		}
+	
+	.product_title {
+		font-size: 11px;
+		text-align: left;
+		}
+	
+	.alt_text {
+		width: 83%;
+		}
+	
+	.static {
+		width: 100%;
+		}
+	
+	.product:hover .for_stars {
+		margin-right: 15px;
+		}
+	
+	.price {
+		width: 40%;
+		}
+	
+	.to_cart {
+		width: 50%;
+		font-size: 11px;
+		margin-right: 11px;
+		}
 	}
