@@ -30,10 +30,11 @@ $(document).ready(function(){
     })  
  } else {
 	  $('.product').hover(function(){
-		  $(this).toggleClass('active').removeClass('active');
+		  $('.alt_text').stop();
+		  $(this).toggleClass('active');
 		  $(this).find(".alt_text").slideToggle(400);    
       			   }, function(){
-		  $(this).toggleClass('active').removeClass('active');
+		  $(this).toggleClass('active');
 		  $(this).find(".alt_text").slideToggle(0);      
       })
  	}
